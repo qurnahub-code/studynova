@@ -1,0 +1,46 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#0a2351] text-white pt-16 pb-8 mt-20 border-t border-blue-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <svg class="w-8 h-8 text-blue-400" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+          </svg>
+          <span class="text-2xl font-black tracking-tight">StudyNova</span>
+        </div>
+        <p class="text-blue-200/70 max-w-sm mb-6 leading-relaxed">
+          The ultimate productivity ecosystem for students. We build tools, systems, and guides to help you get a 4.0 GPA without sacrificing your weekends.
+        </p>
+      </div>
+      
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-white">Resources</h4>
+        <ul class="space-y-3">
+          <li><a href="/tools" class="text-blue-200/70 hover:text-white transition-colors">Free Student Tools</a></li>
+          <li><a href="/printables" class="text-blue-200/70 hover:text-white transition-colors">Printable Planners</a></li>
+          <li><a href="/blog" class="text-blue-200/70 hover:text-white transition-colors">Study Guides</a></li>
+          <li><a href="/about" class="text-blue-200/70 hover:text-white transition-colors">Our Mission</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-bold mb-4 text-white">Legal</h4>
+        <ul class="space-y-3">
+          <li><a href="/privacy" class="text-blue-200/70 hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms" class="text-blue-200/70 hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="mailto:hello@getstudynova.online" class="text-blue-200/70 hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="pt-8 border-t border-white/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-blue-200/50 text-sm">
+        &copy; {currentYear} StudyNova. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

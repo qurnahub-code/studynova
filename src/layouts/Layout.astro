@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -25,10 +26,6 @@ const { title, description = "StudyNova - The Ultimate Student Productivity Syst
 		<main class="flex-grow">
 			<slot />
 		</main>
-		<footer class="bg-[#0a2351] text-white py-12 mt-20">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center opacity-80 text-sm">
-				<p>&copy; {new Date().getFullYear()} StudyNova. Built for students who want more free time.</p>
-			</div>
-		</footer>
+		<Footer />
 	</body>
 </html>
