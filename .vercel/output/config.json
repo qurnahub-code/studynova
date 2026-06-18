@@ -20,63 +20,7 @@
 			"dest": "_render"
 		},
 		{
-			"src": "^/about/?$",
-			"dest": "_render"
-		},
-		{
 			"src": "^/api/subscribe/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/blog/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/blog(?:/(.*?))?/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/printables/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/privacy/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/rss\\.xml$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/terms/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/attendance-calculator/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/exam-countdown/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/gpa-calculator/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/study-timer/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/study-tracker/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/tools/?$",
-			"dest": "_render"
-		},
-		{
-			"src": "^/$",
 			"dest": "_render"
 		},
 		{

@@ -10,7 +10,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://getstudynova.online',
-  output: 'server',
+  output: 'static',
   adapter: vercel(),
   integrations: [react(), mdx()],
 
