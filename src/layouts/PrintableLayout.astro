@@ -29,9 +29,9 @@ const { title, filename } = Astro.props;
             <a href="/printables" class="text-blue-600 font-bold hover:text-blue-800 transition-colors flex items-center gap-2">
                 <span>←</span> Back to Printables
             </a>
-            
             <button 
                 id="download-pdf-btn"
+                onclick={`window.downloadPrintablePdf('${filename}')`}
                 class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold shadow-lg shadow-blue-600/30 hover:bg-blue-700 transition-colors flex items-center gap-2"
             >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
@@ -68,35 +68,33 @@ const { title, filename } = Astro.props;
             }
         </style>
 
-        <script define:vars={{ filename }}>
-            (function() {
+        <script is:inline>
+            window.downloadPrintablePdf = function(filename) {
                 const btn = document.getElementById('download-pdf-btn');
                 const element = document.getElementById('printable-area');
 
                 if (btn && element) {
-                    btn.addEventListener('click', () => {
-                        // Change button text while processing
-                        const originalText = btn.innerHTML;
-                        btn.innerHTML = 'Generating...';
-                        btn.disabled = true;
+                    // Change button text while processing
+                    const originalText = btn.innerHTML;
+                    btn.innerHTML = 'Generating...';
+                    btn.disabled = true;
 
-                        const opt = {
-                            margin:       0,
-                            filename:     filename,
-                            image:        { type: 'jpeg', quality: 1 },
-                            html2canvas:  { scale: 2, useCORS: true },
-                            jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                        };
+                    const opt = {
+                        margin:       0,
+                        filename:     filename,
+                        image:        { type: 'jpeg', quality: 1 },
+                        html2canvas:  { scale: 2, useCORS: true },
+                        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                    };
 
-                        // Generate PDF
-                        html2pdf().set(opt).from(element).save().then(() => {
-                            // Restore button
-                            btn.innerHTML = originalText;
-                            btn.disabled = false;
-                        });
+                    // Generate PDF
+                    html2pdf().set(opt).from(element).save().then(() => {
+                        // Restore button
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
                     });
                 }
-            })();
+            };
         </script>
 	</body>
 </html>
